@@ -29,7 +29,7 @@ public class Ex4 {
     private int count = 0;
     
     private void clickC1() {
-        count++;
+        incrementCount();
         if(AState == 0) {
             AState = 1;
             return;
@@ -38,8 +38,16 @@ public class Ex4 {
         
     }
 
-    private void clickC2() {
+    private void incrementCount() {
         count++;
+    }
+
+    private void resetCount() {
+        count = 0;
+    }
+
+    private void clickC2() {
+        incrementCount();
         if(AState == 0) AState = 1;
         else AState = 0;
         if(BState == 0) BState = 1;
@@ -48,7 +56,7 @@ public class Ex4 {
     }
 
     public int getTheNumberOfSwitchersClicked(int IA, int IB, int FA, int FB) {
-        count = 0;
+        resetCount();
         AState = IA;
         BState = IB;
         if(IA != FA && IB != FB) clickC2();
