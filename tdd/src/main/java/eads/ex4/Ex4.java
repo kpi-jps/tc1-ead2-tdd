@@ -57,26 +57,32 @@ public class Ex4 {
         incrementCount();
     }
 
-   
-
     private void clickC2() {
         toogleAState();
         toogleBState();
         incrementCount();
     }
 
+    private void setInitialState(int IA, int IB) {
+        this.AState = IA;
+        this.BState = IB;
+    }
+
+    private boolean checkFinalState(int FA, int FB) {
+        return AState == FA && BState == FB;
+    }
+
     public int getTheNumberOfSwitchersClicked(int IA, int IB, int FA, int FB) {
         resetCount();
-        AState = IA;
-        BState = IB;
+        setInitialState(IA, IB);
         if(IA != FA && IB != FB) clickC2();
         if(IA != FA && IB == FB) clickC1();
         if(IA == FA && IB != FB) {
             clickC2();
             clickC1();
         }
-        if(AState == FA && BState == FB) return count;
-        return 0;
+        if(!checkFinalState(FA, FB)) return -1;
+        return count;
     }
 
     
