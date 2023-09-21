@@ -73,6 +73,8 @@ public class Ex4 {
     }
 
     public int getTheNumberOfSwitchersClicked(int IA, int IB, int FA, int FB) {
+        if(IA > 1 || IB > 1 || FA > 1 || FB > 1 || IA < 0 || IB < 0 || FA < 0 || FB < 0)
+            throw new IllegalArgumentException("Only allowed 0 or 1 as parameters!");
         resetCount();
         setInitialState(IA, IB);
         if(IA != FA && IB != FB) clickC2();
