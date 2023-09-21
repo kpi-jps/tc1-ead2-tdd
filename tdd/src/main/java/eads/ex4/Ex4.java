@@ -29,23 +29,35 @@ public class Ex4 {
     private int count = 0;
     
     private void clickC1() {
+        count++;
         if(AState == 0) {
             AState = 1;
             return;
         }
-        count++;
         AState = 0;
+        
     }
 
     private void clickC2() {
+        count++;
         if(AState == 0) AState = 1;
         else AState = 0;
         if(BState == 0) BState = 1;
         else BState = 0;
-        count++;
+        
     }
 
     public int getTheNumberOfSwitchersClicked(int IA, int IB, int FA, int FB) {
+        count = 0;
+        AState = IA;
+        BState = IB;
+        if(IA != FA && IB != FB) clickC2();
+        if(IA != FA && IB == FB) clickC1();
+        if(IA == FA && IB != FB) {
+            clickC2();
+            clickC1();
+        }
+        if(AState == FA && BState == FB) return count;
         return 0;
     }
 
