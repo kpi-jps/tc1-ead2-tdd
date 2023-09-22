@@ -14,9 +14,12 @@ Faça um programa que leia os estados iniciais IA e IB e os estados finais desej
 lâmpadas. Os valores de IA, IB, FA e FB são lidos na mesma linha nessa ordem. Seus valores possíveis são
 0, se a lâmpada estiver apagada e 1 caso contrário. Ao final, seu programa deverá imprimir o número
 mínimo de interruptores que devem ser apertados.
+
 Exemplos de entrada e saída:
+
 Entrada Saída
 0 0 1 1 1
 0 0 0 1 2
+
 Fonte: Adaptado de Olimpíada Brasileira de Informática (OBI)
 Exercício gentilmente cedido pelos profs. Jorge Cutigi e Adenilso Simão (ICMC/USP)
